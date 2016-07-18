@@ -21,7 +21,6 @@
       <div class="msg-name">popup:</div>
       <div class="msg-demo">
         <button class="msg-btn" @click="popup1()">popup1</button>
-        <!--<button class="msg-btn" @click="popup2()">popup2</button>-->
       </div>
     </div>
     <!--left->right-->
@@ -29,6 +28,13 @@
       <div class="msg-name">left->right:</div>
       <div class="msg-demo">
         <button class="msg-btn" @click="leftRight()">left->right</button>
+      </div>
+    </div>
+    <!--loading-->
+    <div class="msg">
+      <div class="msg-name">loading:</div>
+      <div class="msg-demo">
+        <button class="msg-btn" @click="loading()">loading</button>
       </div>
     </div>
   </div>
@@ -44,7 +50,10 @@
   </popup>
   <!--leftRight-->
   <left-right :is-show.sync="isLeftRightShow">left-right页面</left-right>
+  <!--loading-->
+  <loading :is-show.sync="isLoadingShow"></loading>
   {{num}}
+  <div v-for="yea in yeas">{{yea}}</div>
 </template>
 <style lang="stylus" rel="stylesheet/stylus">
   .msg {
@@ -68,7 +77,20 @@
   import dialogService from '../components/dialogService.vue'
   import popup from '../components/popup.vue'
   import leftRight from '../components/left-right.vue'
+  import loading from '../components/loading.vue'
   export default {
+    init () {
+//      this.yeas = [5,6,7,8];  // init的话 数据
+    },
+    created () {
+//      this.yeas = [1,2,3,4];
+    },
+    compiled() {
+//      this.yeas = [1,2,3,4];
+    },
+    attached() {
+//      this.yeas = [1,2,3,4];
+    },
     ready() {
       window.onpopstate = () => {  // 每当处于激活状态的历史记录条目发生变化时就会触发
         this.isLeftRightShow = false
@@ -78,7 +100,8 @@
       alertMsg,
       dialogService,
       popup,
-      leftRight
+      leftRight,
+      loading
     },
     data () {
       return {
@@ -94,7 +117,8 @@
         },
         okText: '',
         popupShow: false,
-        isLeftRightShow: false
+        isLeftRightShow: false,
+        isLoadingShow: false
       }
     },
     methods: {
@@ -145,9 +169,16 @@
       },
       leftRight () {
         window.history.pushState('',''); // history 存一条记录
-
-        this.isLeftRightShow = true
+        this.isLoadingShow = true;// 显示菊花转模拟
+        setTimeout(() => {
+          this.isLoadingShow = false;// 关闭菊花转模拟
+          this.isLeftRightShow = true;// 显示left->right
+        },2000)
         console.log('leftRight')
+      },
+      loading () {
+        console.log('loading')
+        this.isLoadingShow = true
       }
     }
   }
