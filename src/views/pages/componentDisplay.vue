@@ -37,6 +37,14 @@
         <button class="msg-btn" @click="loading()">loading</button>
       </div>
     </div>
+
+    <!--img-->
+    <div class="msg">
+      <div class="msg-name">img:</div>
+      <div class="msg-demo">
+        <button class="msg-btn" @click="img()">img</button>
+      </div>
+    </div>
   </div>
   <!--alertMsg组件-->
   <alert-msg :is-show.sync="isMsgShow" :options.sync="options"></alert-msg>

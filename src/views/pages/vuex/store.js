@@ -23,7 +23,7 @@ const mutations = {
     console.log('触发addition 方法')
   },
   demo (state){
-    console.log('触发demo方法', state)
+    console.log('触发demo方法', 'demo方法的data数据')
   }
 }
 
@@ -34,3 +34,4 @@ export default new Vuex.Store({
   state,
   mutations
 })
+
