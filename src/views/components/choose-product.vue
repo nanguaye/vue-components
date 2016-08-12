@@ -10,7 +10,7 @@
       <div class="body-left" :style="bodyLeftStyle">
         <div class="body-left-item" v-for="item in products" :class="{'active':  $index===isActiveIndex }"
              @click="chooseCategory(item,$index)">
-          {{item.category}}{{isActiveIndex}}
+          {{item.category}}
         </div>
       </div>
       <div class="body-right" :style="bodyRightStyle" id="bodyRight">
@@ -144,7 +144,7 @@
   export default {
     data () {
       return {
-        products:   [
+        products: [
           {
             category: '水果', categoryList: [
             {name: '苹果'},
@@ -192,10 +192,10 @@
             category: '酱料', categoryList: [
             {name: '甜酱'},
             {name: '番茄酱'},
-            {name: '海鲜酱'},
-            {name: '醋'},
-            {name: '辣椒'},
-            {name: '海鲜酱'}]
+            {name: '甜酱'},
+            {name: '番茄酱'},
+            {name: '甜酱'},
+            {name: '番茄酱'}]
           },
           {
             category: '蔬菜', categoryList: [
@@ -224,10 +224,10 @@
       // totalHeight的总高度
       const totalHeight = document.getElementById('totalHeight').offsetHeight
       // 滚动区域可视的高度
-      const gdqy = winHeight- testHeight;
+      const gdqy = winHeight - testHeight;
       // 滚动条可滚最大值
-      this.scrollMax = totalHeight- gdqy;
-      console.log('totalHeight',totalHeight,'gdqy',gdqy,'scrollMax', this.scrollMax)
+      this.scrollMax = totalHeight - gdqy;
+      console.log('totalHeight', totalHeight, 'gdqy', gdqy, 'scrollMax', this.scrollMax)
       // 获取到 body-right
       const bodyRightDom = document.getElementById('bodyRight')
       // body-right初始时候的scrollTop
@@ -248,7 +248,7 @@
         let offsetTop = document.getElementById('item' + $index).offsetTop;
         let offsetHeight = document.getElementById('item' + $index).offsetHeight;
         _initCategory.push(offsetTop)
-        console.log('item' + $index, '初始距离顶部:', offsetTop, '自身高度:', offsetHeight,_initCategory)
+        console.log('item' + $index, '初始距离顶部:', offsetTop, '自身高度:', offsetHeight, _initCategory)
       })
       // 赋值过去
       this._initCategory = _initCategory
@@ -261,19 +261,19 @@
         this.products.forEach((item, $index) => {
           let _offsetTop = document.getElementById('item' + $index).offsetTop - _bodyRightDomScrollTop
           let _offsetHeight = document.getElementById('item' + $index).offsetHeight
-          console.log('item'+$index,'距离顶部:', _offsetTop, '自身高度', _offsetHeight,'滚动条',_bodyRightDomScrollTop,'滚动条最大',this.scrollMax)
-          // 当滚动条位置为最大值,那么激活最后一个选项!
-          if(_bodyRightDomScrollTop === this.scrollMax ) {
-            this.isActiveIndex =  this.products.length -1
-            console.log(this.products)
-          }else {
-            if (_offsetTop <= 0 && - _offsetTop < _offsetHeight) {
+          console.log('item' + $index, '距离顶部:', _offsetTop, '自身高度', _offsetHeight, '滚动条', _bodyRightDomScrollTop, '滚动条最大', this.scrollMax)
+//          // 当滚动条位置为最大值,那么激活最后一个选项!
+//          if(_bodyRightDomScrollTop === this.scrollMax ) {
+//            this.isActiveIndex =  this.products.length -1
+//            console.log(this.products)
+//          }else {
+          if (_bodyRightDomScrollTop < this.scrollMax) {
+            if (_offsetTop <= 0 && -_offsetTop < _offsetHeight) {
               this.isActiveIndex = $index;
               this.itemTitle = item.category;
-              console.log('滚动',$index,this.isActiveIndex)
+              console.log($index, _bodyRightDomScrollTop)
             }
           }
-
 
         })
       }
@@ -286,12 +286,13 @@
         const bodyRightDom = document.getElementById('bodyRight')
         this._initCategory.forEach((itemToTop, $index) => {
           if ($index === index) {
-            console.log('itemToTop',itemToTop,this.scrollMax)
+            console.log('itemToTop', itemToTop, 'item',item)
             this.isActiveIndex = index
-              bodyRightDom.scrollTop = itemToTop
+            this.itemTitle = item.category;
+            bodyRightDom.scrollTop = itemToTop
           }
         })
-        console.log('isActiveIndex',this.isActiveIndex,'当前点击的index',index)
+        console.log('isActiveIndex', this.isActiveIndex, '当前点击的index', index)
       }
 
     }
