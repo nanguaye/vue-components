@@ -10,8 +10,8 @@
   }
 </style>
 <script>
-  import { addition } from './vuex/actions'
-  import { demo } from './vuex/actions'
+  import { addition } from './actions'
+  import { demo } from './actions'
   console.log('demo', demo)
   export default {
     vuex: {

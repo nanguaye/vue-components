@@ -20,7 +20,7 @@
 <script type="text/babel">
   import Display from './Display.vue'
   import Increment from './Increment.vue'
-  import store from './vuex/store' // import 我们刚刚创建的 store
+  import store from './store' // import 我们刚刚创建的 store
   console.log('store', store)
   export default {
     vuex: {

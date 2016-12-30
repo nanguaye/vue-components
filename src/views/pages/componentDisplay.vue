@@ -62,6 +62,9 @@
   <loading :is-show.sync="isLoadingShow"></loading>
   {{num}}
   <div v-for="yea in yeas">{{yea}}</div>
+  <!--tab-->
+  <tab-item :tab-items = "tabItems"></tab-item>
+  <!--<tab-content-item></tab-content-item>-->
 </template>
 <style lang="stylus" rel="stylesheet/stylus">
   .msg {
@@ -86,6 +89,8 @@
   import popup from '../components/popup.vue'
   import leftRight from '../components/left-right.vue'
   import loading from '../components/loading.vue'
+  import tabItem from '../components/tab-item.vue'
+  import tabContentItem from '../components/tab-content-item.vue'
   export default {
     init () {
 //      this.yeas = [5,6,7,8];  // init的话 数据
@@ -109,7 +114,9 @@
       dialogService,
       popup,
       leftRight,
-      loading
+      loading,
+      tabItem,
+      tabContentItem
     },
     data () {
       return {
@@ -126,7 +133,8 @@
         okText: '',
         popupShow: false,
         isLeftRightShow: false,
-        isLoadingShow: false
+        isLoadingShow: false,
+        tabItems: [{text: 'tab1', content:'tab1的内容'}, {text: 'tab2', content:'tab1的内容'}, {text: 'tab3', content:'tab1的内容'}, {text: 'tab4', content:'tab1的内容'}]
       }
     },
     methods: {
