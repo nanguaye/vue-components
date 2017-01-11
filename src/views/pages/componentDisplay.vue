@@ -67,18 +67,26 @@
   <!--<tab-content-item></tab-content-item>-->
 </template>
 <style lang="stylus" rel="stylesheet/stylus">
+  .demo-css
+    position fixed
+    top 50%
+    left 50%
+    transform translate(-50%,-50%)
+    width 200px
+    height 200px
+    background-color red
   .msg {
-    padding: 10Px;
+    padding: 20px;
     border-bottom 1px solid
     .msg-name {
       float: left;
-      margin-right: 10Px;
-      line-height: 25Px
+      margin-right: 20px;
+      line-height: 50px
     }
     .msg-demo {
       .msg-btn {
         border: 1px solid;
-        margin-right: 5Px
+        margin-right: 10px
       }
     }
   }
@@ -90,7 +98,6 @@
   import leftRight from '../components/left-right.vue'
   import loading from '../components/loading.vue'
   import tabItem from '../components/tab-item.vue'
-  import tabContentItem from '../components/tab-content-item.vue'
   export default {
     init () {
 //      this.yeas = [5,6,7,8];  // init的话 数据
@@ -105,6 +112,12 @@
 //      this.yeas = [1,2,3,4];
     },
     ready() {
+      let elDiv = document.createElement('div')
+      const attr = document.createAttribute('class')
+      attr.value = "demo-css"
+      elDiv.setAttributeNode(attr)
+      console.log(elDiv.style.cssText)
+      document.body.appendChild(elDiv)
       window.onpopstate = () => {  // 每当处于激活状态的历史记录条目发生变化时就会触发
         this.isLeftRightShow = false
       }
@@ -115,8 +128,7 @@
       popup,
       leftRight,
       loading,
-      tabItem,
-      tabContentItem
+      tabItem
     },
     data () {
       return {

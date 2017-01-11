@@ -1,4 +1,5 @@
 import 'normalize.css'
+import './sdk/responsive'
 import './assets/styles/index.styl'
 import Vue from 'vue'
 import App from './views/app.vue'

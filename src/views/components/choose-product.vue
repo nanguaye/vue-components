@@ -43,10 +43,10 @@
 
   .head {
     width: 100%;
-    height: 50Px;
-    line-height: 50Px;
+    height: 100px;
+    line-height: 100px;
     text-align: center;
-    border-bottom: 1Px solid;
+    border-bottom: 2px solid;
     box-sizing: border-box;
     span {
       color: rebeccapurple
@@ -56,7 +56,7 @@
   .body {
     width: 100%;
     position: relative;
-    padding-bottom: 50Px;
+    padding-bottom: 100px;
     .body-right-title {
       position: absolute;
       top: 0;
@@ -64,8 +64,8 @@
       right: 0;
       text-align: left;
       background-color: #f0f0f0;
-      padding: 5Px;
-      font-size: 12Px;
+      padding: 10px;
+      font-size: 24px;
       color: rebeccapurple;
       z-index: 11;
     }
@@ -78,10 +78,10 @@
       overflow-y: scroll;
       .body-left-item {
         width: 100%;
-        height: 60Px;
-        line-height: 60Px;
-        font-size: 12Px;
-        border-bottom: 1Px solid #e5e5e5;
+        height: 120px;
+        line-height: 120px;
+        font-size: 24px;
+        border-bottom: 2px solid #e5e5e5;
       }
       .active {
         background-color: #ffffff;
@@ -94,20 +94,20 @@
       text-align: center;
       box-sizing: border-box;
       overflow-y: scroll;
-      padding-left: 8Px;
+      padding-left: 16px;
       .body-right-item {
         .body-right-item-category {
           text-align: left;
           background-color: #f0f0f0;
-          padding: 5Px;
-          font-size: 12Px;
+          padding: 10px;
+          font-size: 24px;
           color: rebeccapurple;
         }
         .body-right-item-categoryItem {
-          padding: 25Px 0;
+          padding: 50px 0;
           /*line-height: 50Px;*/
-          font-size: 12Px;
-          border-bottom: 1Px solid #f0f0f0
+          font-size: 24px;
+          border-bottom: 2px solid #f0f0f0
         }
       }
     }
@@ -117,27 +117,27 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 50Px;
+    height: 100px;
     background-color: #FFFFFF;
     .foot-confirm {
       height: 100%;
       width: 30%;
       float: right;
       background-color: #db5252;
-      line-height: 50Px;
+      line-height: 100px;
       text-align: center;
     }
   }
 
   .add {
-    border: 1Px solid;
-    width: 10Px;
-    height: 10Px;
+    border: 2px solid;
+    width: 20px;
+    height: 20px;
     display: inline-block;
-    border-radius: 5Px;
+    border-radius: 10px;
     transform: scale(1.3);
     float: right;
-    margin-right: 25Px;
+    margin-right: 50px;
   }
 </style>
 <script type="text/babel">

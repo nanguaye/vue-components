@@ -50,11 +50,11 @@
   }
 
   .loading {
-    width: 100Px;
+    width: 200px;
     /*border: 1Px solid;*/
     background-color: rgba(0, 0, 0, 0.5)
-    border-radius: 4Px;
-    height: 100Px;
+    border-radius: 8px;
+    height: 200px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -66,7 +66,7 @@
       vertical-align: middle;
       .loading-title {
         position: absolute;
-        bottom: 5Px;
+        bottom: 10px;
         left: 50%;
         transform: translateX(-50%);
       }
@@ -74,15 +74,15 @@
   }
 
   .spinner {
-    width: 40Px;
-    height: 40Px;
+    width: 80px;
+    height: 80px;
     position: relative;
     display: inline-block
   }
 
   .container1 > div, .container2 > div, .container3 > div {
-    width: 9Px;
-    height: 9Px;
+    width: 18px;
+    height: 18px;
     background-color: #ffffff;
 
     border-radius: 100%;

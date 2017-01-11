@@ -45,10 +45,10 @@
   }
 
   .alert-msg-content {
-    width: 250Px;
-    height: 130Px;
+    width: 500px;
+    height: 260x;
     background-color: #ffffff;
-    border-radius: 6Px;
+    border-radius: 12px;
     text-align: center;
     z-index: 11;
     position: fixed;
@@ -69,8 +69,8 @@
         display: table-cell;
         vertical-align: middle;
         font-weight: bold;
-        font-size: 20Px;
-        padding: 0 10Px
+        font-size: 40px;
+        padding: 0 20px
       }
     }
     .alert-msg-foot {

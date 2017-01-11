@@ -44,10 +44,10 @@
   }
 
   .alert-msg-content {
-    width: 150Px;
-    height: 80Px;
+    width: 300px;
+    height: 160px;
     background-color: #ffffff;
-    border-radius: 6Px;
+    border-radius: 12px;
     text-align: center;
     z-index: 11;
     position: fixed;

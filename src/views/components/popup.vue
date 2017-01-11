@@ -18,7 +18,7 @@
 
   .popup {
     width: 100%;
-    height: 300Px;
+    height: 600px;
     background-color: #ffffff;
     position: fixed;
     bottom: 0;
